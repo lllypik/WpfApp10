@@ -7,15 +7,15 @@
         xmlns:collection ="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:system ="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Viewer" Height="800" Width="600" Background="Black">
-    <!--DataContext="{Binding RelativeSource={RelativeSource Self}}"-->
-       <!--<Window.CommandBindings>
+        Title="Viewer" Height="800" Width="600" Background="Black"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Window.CommandBindings>
         <CommandBinding Command="local:MyCommands.GetIMG1" Executed="GetIMG1Executed"/>
         <CommandBinding Command="local:MyCommands.GetIMG2" Executed="GetIMG2Executed"/>
         <CommandBinding Command="local:MyCommands.GetIMG3" Executed="GetIMG3Executed"/>
         <CommandBinding Command="local:MyCommands.GetIMG4" Executed="GetIMG4Executed"/>
         <CommandBinding Command="local:MyCommands.GetIMG5" Executed="GetIMG5Executed"/>
-    </Window.CommandBindings>-->
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
         <RowDefinition Height="8*"/>
@@ -30,8 +30,8 @@
             <Border.RenderTransform>
                 <SkewTransform CenterX="0" CenterY="0" AngleX="0" AngleY="3"/>
             </Border.RenderTransform>
-                <!--<Image x:Name="myImage" Source= "{Binding RelativeSource=ImagePath}" Width="200" Height="270"/>-->
-                <Image x:Name="myImage" Source= "Data/IMG1.jpg" Width="200" Height="270"/>
+                <Image x:Name="myImage" Source= "{Binding Path=ImagePath}" Width="200" Height="270"/>
+                <!--<Image x:Name="myImage" Source= "Data/IMG1.jpg" Width="200" Height="270"/>-->
             </Border>
         <Border Width="210" Height="300" Margin="40">
             <Border.RenderTransform>
@@ -53,7 +53,7 @@
                 </Border>
     </StackPanel>
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG1">
+            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG1" >
                 <Image x:Name="myImage1" Source="Data/IMG1.jpg" Stretch="UniformToFill"/>
             </ToggleButton>
             <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG2">
