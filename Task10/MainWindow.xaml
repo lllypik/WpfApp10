@@ -30,8 +30,7 @@
             <Border.RenderTransform>
                 <SkewTransform CenterX="0" CenterY="0" AngleX="0" AngleY="3"/>
             </Border.RenderTransform>
-                <Image x:Name="myImage" Source= "{Binding Path=ImagePath}" Width="200" Height="270"/>
-                <!--<Image x:Name="myImage" Source= "Data/IMG1.jpg" Width="200" Height="270"/>-->
+                <Image x:Name="myImage" Source= "{Binding Path=ImagePath}" Width="200" Height="270" Stretch="UniformToFill"/>
             </Border>
         <Border Width="210" Height="300" Margin="40">
             <Border.RenderTransform>
