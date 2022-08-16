@@ -1,0 +1,73 @@
+﻿<Window x:Class="Task10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task10"
+        xmlns:collection ="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:system ="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Viewer" Height="800" Width="600" Background="Black">
+    <!--DataContext="{Binding RelativeSource={RelativeSource Self}}"-->
+       <!--<Window.CommandBindings>
+        <CommandBinding Command="local:MyCommands.GetIMG1" Executed="GetIMG1Executed"/>
+        <CommandBinding Command="local:MyCommands.GetIMG2" Executed="GetIMG2Executed"/>
+        <CommandBinding Command="local:MyCommands.GetIMG3" Executed="GetIMG3Executed"/>
+        <CommandBinding Command="local:MyCommands.GetIMG4" Executed="GetIMG4Executed"/>
+        <CommandBinding Command="local:MyCommands.GetIMG5" Executed="GetIMG5Executed"/>
+    </Window.CommandBindings>-->
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="8*"/>
+        <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0">
+        <Border BorderBrush="#FFB8B0B0" BorderThickness="3"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Color="White" Direction="-45" ShadowDepth="10" Opacity="0.3"/>
+            </Border.Effect>
+            <Border.RenderTransform>
+                <SkewTransform CenterX="0" CenterY="0" AngleX="0" AngleY="3"/>
+            </Border.RenderTransform>
+                <!--<Image x:Name="myImage" Source= "{Binding RelativeSource=ImagePath}" Width="200" Height="270"/>-->
+                <Image x:Name="myImage" Source= "Data/IMG1.jpg" Width="200" Height="270"/>
+            </Border>
+        <Border Width="210" Height="300" Margin="40">
+            <Border.RenderTransform>
+                <SkewTransform CenterX="30" CenterY="2" AngleX="-30" AngleY="10"/>
+            </Border.RenderTransform>
+            <Border.Background>
+                <VisualBrush Visual="{Binding ElementName=myImage}">
+                    <VisualBrush.Transform>
+                        <ScaleTransform  ScaleX="1" ScaleY="-1" CenterX="200" CenterY="150"/>
+                    </VisualBrush.Transform>
+                </VisualBrush>
+            </Border.Background>
+            <Border.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="Black"/>
+                    <GradientStop Offset="0.6" Color="Transparent"/>
+                </LinearGradientBrush>
+            </Border.OpacityMask>
+                </Border>
+    </StackPanel>
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG1">
+                <Image x:Name="myImage1" Source="Data/IMG1.jpg" Stretch="UniformToFill"/>
+            </ToggleButton>
+            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG2">
+                <Image x:Name="myImage2" Source="Data/IMG2.jpg" Stretch="UniformToFill"/>
+            </ToggleButton>
+            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG3">
+                <Image x:Name="myImage3" Source="Data/IMG3.jpg" Stretch="UniformToFill"/>
+            </ToggleButton>
+            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG4">
+                <Image x:Name="myImage4" Source="Data/IMG4.jpg" Stretch="UniformToFill"/>
+            </ToggleButton>
+            <ToggleButton Height="100" Width="100" Margin="5" Command="local:MyCommands.GetIMG5">
+                <Image x:Name="myImage5" Source="Data/IMG5.jpg" Stretch="UniformToFill"/>
+            </ToggleButton>
+        </WrapPanel>
+    </Grid>
+</Window>
